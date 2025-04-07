@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Security Alert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://www.instagram.com/static/images/ico/favicon-192.png/68d99ba29cc8.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .box {
+      background: white;
+      padding: 30px 20px;
+      border: 1px solid #dbdbdb;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .box h2 {
+      color: #ed4956;
+      margin-bottom: 15px;
+    }
+
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #3897f0;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #prankMsg {
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Security Alert</h2>
+    <p>Suspicious login attempt detected from <strong>Vanimel, Kozhikode</strong>.</p>
+    <p>Verifying your account activity...</p>
+    <div class="loader"></div>
+    <div id="prankMsg">Just kidding! It’s a prank by Faiz!</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loader').style.display = 'none';
+      document.getElementById('prankMsg').style.display = 'block';
+
+      // Redirect to Instagram after showing the message
+      setTimeout(() => {
+        window.location.href = "https://www.instagram.com";
+      }, 3000);
+    }, 4000);
+  </script>
+
+</body>
+</html>
